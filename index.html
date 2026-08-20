@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f8f7f2" />
+  <meta name="description" content="YatraAI — a trust-first travel copilot that plans around your preferences and real-world conditions." />
+  <title>YatraAI — Travel, intelligently grounded</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="announcement"><span class="pulse"></span><span>YatraAI is live · weather-aware · source-labelled</span><a href="#trust">See the trust layer →</a></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="YatraAI home">
+      <span class="brand-word">Yatra<span>AI</span></span>
+      <span class="brand-sub">TRAVEL INTELLIGENCE</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#explore">Discover</a>
+      <a href="#planner">Plan</a>
+      <a href="#trust">Trust</a>
+      <a href="#local">Local</a>
+    </nav>
+    <div class="top-actions">
+      <button class="ghost-btn" id="languageBtn" type="button">EN · हिन्दी</button>
+      <button class="primary-btn compact" id="topPlanBtn" type="button">Build a trip <span>↗</span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <div class="hero-kicker"><span class="kicker-line"></span><span>TRUST-FIRST TRAVEL AI</span></div>
+        <h1>Go somewhere.<br><span>Know what changed.</span></h1>
+        <p class="hero-lede">YatraAI builds a trip around your people, pace and accessibility needs — then checks live conditions before it recommends where you go next.</p>
+        <div class="hero-actions">
+          <button class="primary-btn hero-cta" id="heroPlanBtn" type="button">Plan my trip <span>→</span></button>
+          <a class="text-link" href="#how-it-works">Why YatraAI is different <span>↓</span></a>
+        </div>
+        <div class="hero-metrics">
+          <div><strong>01</strong><span>Live weather</span><small>Open-Meteo</small></div>
+          <div><strong>02</strong><span>Mapped places</span><small>OpenStreetMap</small></div>
+          <div><strong>03</strong><span>AI reasoning</span><small>Evidence-linked</small></div>
+        </div>
+      </div>
+
+      <div class="hero-collage" aria-label="Your travel photography">
+        <figure class="photo-card photo-card-a">
+          <img src="assets/travel-01.jpg" alt="Your hero travel photograph" onerror="this.parentElement.classList.add('photo-missing'); this.style.display='none'">
+          <figcaption><span>01</span><strong>Your destination</strong></figcaption>
+        </figure>
+        <figure class="photo-card photo-card-b">
+          <img src="assets/travel-02.jpg" alt="Local culture photograph" onerror="this.parentElement.classList.add('photo-missing'); this.style.display='none'">
+          <figcaption><span>02</span><strong>Local life</strong></figcaption>
+        </figure>
+        <figure class="photo-card photo-card-c">
+          <img src="assets/travel-03.jpg" alt="Landscape travel photograph" onerror="this.parentElement.classList.add('photo-missing'); this.style.display='none'">
+          <figcaption><span>03</span><strong>Landscape</strong></figcaption>
+        </figure>
+        <div class="live-badge">
+          <div class="live-badge-top"><span class="live-dot"></span> LIVE CONDITIONS</div>
+          <strong id="heroWeather">Pick a destination to load</strong>
+          <small>Real-time weather · source-labelled</small>
+        </div>
+        <div class="collage-note">Replace the five images in <strong>/assets</strong><br>with your own travel photography.</div>
+      </div>
+    </section>
+
+    <section class="manifesto section-shell" id="explore">
+      <div class="manifesto-lead">
+        <span class="eyebrow">BUILT FOR THE REAL WORLD</span>
+        <h2>Not another chatbot that confidently makes things up.</h2>
+      </div>
+      <div class="manifesto-grid">
+        <article><span class="manifesto-index">01</span><h3>Evidence before answers.</h3><p>Critical facts are tied to the data we actually retrieved. No invented opening hours, prices or safety claims.</p></article>
+        <article><span class="manifesto-index">02</span><h3>Plans that can move.</h3><p>Fresh weather and mapped-place signals can trigger a re-plan instead of leaving you with a static schedule.</p></article>
+        <article><span class="manifesto-index">03</span><h3>Better for the places you visit.</h3><p>Local-first discovery and responsible alternatives help distribute attention beyond the obvious hotspots.</p></article>
+      </div>
+    </section>
+
+    <section class="image-ribbon section-shell" aria-label="Travel image gallery">
+      <figure><img src="assets/travel-04.jpg" alt="Culture travel photograph" onerror="this.style.display='none'; this.parentElement.classList.add('photo-missing')"><figcaption><span>04</span> Culture</figcaption></figure>
+      <div class="ribbon-copy"><span class="eyebrow">YOUR CAMERA ROLL, YOUR BRAND</span><h3>Make YatraAI feel like <em>your</em> India.</h3><p>These five image slots are intentionally local. Drop your own high-quality photographs into <code>assets/</code> and the front page becomes yours.</p></div>
+      <figure><img src="assets/travel-05.jpg" alt="Slow travel photograph" onerror="this.style.display='none'; this.parentElement.classList.add('photo-missing')"><figcaption><span>05</span> Slow travel</figcaption></figure>
+    </section>
+
+    <section class="planner-section section-shell" id="planner">
+      <div class="planner-intro">
+        <div>
+          <span class="eyebrow">THE PLANNER</span>
+          <h2>Tell YatraAI what a good trip feels like.</h2>
+          <p>Then watch it build the trip from live evidence.</p>
+        </div>
+        <div class="planner-badge"><span class="pulse"></span> LIVE API PIPELINE</div>
+      </div>
+
+      <form class="planner-card" id="plannerForm">
+        <div class="planner-main">
+          <div class="destination-hero-field">
+            <label for="destination">Where are you going?</label>
+            <div class="destination-input-wrap"><span>⌖</span><input id="destination" name="destination" required placeholder="Jaipur, Goa, Kyoto…" autocomplete="off" /></div>
+            <small>Live geocoding · no hard-coded city list</small>
+          </div>
+          <div class="field-row">
+            <label class="field"><span>Days</span><select id="days"><option>2</option><option selected>3</option><option>4</option><option>5</option><option>7</option></select></label>
+            <label class="field"><span>Travel style</span><select id="pace"><option value="relaxed">Slow & relaxed</option><option value="balanced" selected>Balanced</option><option value="packed">See a lot</option></select></label>
+            <label class="field"><span>Language</span><select id="tripLanguage"><option value="en" selected>English</option><option value="hi">हिन्दी</option><option value="bn">বাংলা</option><option value="ta">தமிழ்</option><option value="mr">मराठी</option></select></label>
+          </div>
+          <div class="field-row">
+            <label class="field"><span>Budget</span><select id="budget"><option value="low">Thoughtful</option><option value="mid" selected>Comfort</option><option value="high">Premium</option></select></label>
+            <label class="field"><span>Walking</span><select id="walking"><option value="low">Keep it light</option><option value="medium" selected>Moderate</option><option value="high">Happy to walk</option></select></label>
+            <label class="field"><span>Group</span><select id="group"><option>Solo</option><option selected>Couple</option><option>Family</option><option>Seniors</option><option>Friends</option></select></label>
+          </div>
+          <div class="preference-block"><span class="field-label">What matters to you?</span><div class="chip-row" id="interestChips">
+            <button type="button" class="choice active" data-value="culture">Culture</button><button type="button" class="choice active" data-value="food">Food</button><button type="button" class="choice" data-value="nature">Nature</button><button type="button" class="choice" data-value="history">History</button><button type="button" class="choice" data-value="local">Local life</button><button type="button" class="choice" data-value="shopping">Shopping</button>
+          </div></div>
+          <div class="preference-block"><span class="field-label">Accessibility needs</span><div class="chip-row" id="accessChips">
+            <button type="button" class="choice" data-value="wheelchair">Wheelchair</button><button type="button" class="choice" data-value="lowwalking">Low walking</button><button type="button" class="choice" data-value="no-stairs">Avoid stairs</button><button type="button" class="choice" data-value="elderly">Elder-friendly</button>
+          </div></div>
+          <label class="field notes-field"><span>Anything YatraAI should know?</span><textarea id="notes" rows="2" placeholder="Travelling with parents · vegetarian food · avoid crowded places…"></textarea></label>
+        </div>
+        <aside class="planner-side">
+          <div class="trust-card">
+            <div class="trust-card-head"><span class="shield">✓</span><strong>Trust controls are on</strong></div>
+            <p>YatraAI reasons over evidence, not imagination. Missing facts stay missing.</p>
+            <div class="trust-line"><span class="legend verified"></span> Verified / live</div>
+            <div class="trust-line"><span class="legend community"></span> Mapped community signal</div>
+            <div class="trust-line"><span class="legend uncertain"></span> Needs verification</div>
+          </div>
+          <button class="primary-btn full" type="submit" id="planSubmit">Build my itinerary <span>→</span></button>
+          <div class="api-note">Weather + mapped places load in the browser. Your optional Gemini/OpenAI key stays on the server.</div>
+        </aside>
+      </form>
+    </section>
+
+    <section class="results-section section-shell" id="results" hidden>
+      <div class="results-top">
+        <div><span class="eyebrow">YOUR LIVE PLAN</span><h2 id="resultsTitle">Trip plan</h2><p id="resultsSubtitle"></p></div>
+        <div class="results-actions"><button class="ghost-btn" id="refreshBtn" type="button">↻ Re-check</button><button class="primary-btn" id="startTripBtn" type="button">Start live trip →</button></div>
+      </div>
+      <div class="data-ribbon" id="dataRibbon"></div><div class="api-status" id="apiStatus" aria-live="polite"></div>
+      <div class="results-grid">
+        <div class="itinerary-panel"><div class="panel-heading"><span>Adaptive itinerary</span><span id="planQuality" class="confidence-badge"></span></div><div id="itinerary"></div></div>
+        <div class="side-stack">
+          <div class="map-panel"><div class="panel-heading"><span>Journey map</span><span class="tiny-source">OpenStreetMap</span></div><div id="map"></div></div>
+          <div class="sources-panel" id="trust"><div class="panel-heading"><span>Why you can trust this</span><button class="text-button" id="sourcesToggle" type="button">Details</button></div><div id="sourcesList"></div></div>
+        </div>
+      </div>
+      <div class="replan-banner" id="replanBanner"><div><span class="eyebrow">RESPONSIVE MODE</span><h3>Reality changed? Re-plan.</h3><p>Fetch fresh signals and rebuild the route around the newest conditions.</p></div><button class="secondary-btn" id="replanBtn" type="button">Re-plan around current conditions</button></div>
+    </section>
+
+    <section class="trust-section section-shell" id="how-it-works">
+      <div class="trust-copy"><span class="eyebrow">THE DIFFERENCE</span><h2>YatraAI is opinionated about <em>uncertainty.</em></h2><p>When the data is incomplete, the product says so. That makes the AI more useful, not less.</p></div>
+      <div class="principles">
+        <article><span>01</span><h3>Source the fact.</h3><p>Live conditions and mapped places are tied back to named sources.</p></article>
+        <article><span>02</span><h3>Expose uncertainty.</h3><p>Unknown opening hours and accessibility details remain clearly marked.</p></article>
+        <article><span>03</span><h3>Redirect responsibly.</h3><p>When a place is unsuitable, the experience can steer people toward alternatives.</p></article>
+      </div>
+    </section>
+
+    <section class="local-section section-shell" id="local">
+      <div class="section-heading"><div><span class="eyebrow">LOCAL BY DEFAULT</span><h2>Put more of the trip back into the local economy.</h2></div><p>Independent places are surfaced when the mapped evidence supports it.</p></div>
+      <div class="local-cards" id="localCards"><div class="empty-local"><span>◎</span><strong>Your local shortlist appears here.</strong><small>Plan a trip and YatraAI will surface mapped independent places where the evidence supports the signal.</small></div></div>
+    </section>
+  </main>
+
+  <footer class="footer section-shell">
+    <div><strong>YatraAI</strong><p>Travel that adapts to reality.</p></div>
+    <div class="footer-meta"><span>Responsible tourism by design</span><span>OpenStreetMap contributors</span><span>Weather · Open-Meteo</span></div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="loading-overlay" id="loadingOverlay" hidden><div class="loader-card"><div class="spinner"></div><strong id="loadingTitle">Building your plan…</strong><span id="loadingText">Getting the destination.</span></div></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="config.js" onerror="this.remove()"></script>
+  <script src="app.js"></script>
+</body>
+</html>
