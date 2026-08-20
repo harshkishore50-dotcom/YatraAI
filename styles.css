@@ -13,3 +13,15 @@
 @media(max-width:1050px){.nav{display:none}.topbar{grid-template-columns:1fr auto;padding:0 22px}.hero{grid-template-columns:1fr;gap:44px;padding-top:50px}.hero-copy{padding-left:0}.hero-collage{min-height:570px}.manifesto,.trust-section{grid-template-columns:1fr;gap:35px}.manifesto-grid{max-width:900px}.planner-card{grid-template-columns:1fr}.planner-side{border-left:0;border-top:1px solid var(--line)}.results-grid{grid-template-columns:1fr}.data-ribbon,.api-status{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.announcement{padding:0 14px;justify-content:flex-start;white-space:nowrap;overflow:hidden}.announcement a{display:none}.brand-sub,.nav{display:none}.topbar{height:68px;padding:0 15px}.hero{min-height:auto;padding:44px 0 68px}.hero h1{font-size:54px}.hero-lede{font-size:15px}.hero-actions{flex-wrap:wrap}.hero-metrics{grid-template-columns:1fr 1fr 1fr;gap:10px}.hero-collage{min-height:490px}.photo-card-a{height:405px}.photo-card-b{height:175px}.photo-card-c{height:180px}.live-badge{left:0;bottom:30px;width:230px}.collage-note{right:0}.manifesto,.image-ribbon,.trust-section{padding-bottom:70px}.manifesto-grid{grid-template-columns:1fr}.manifesto-grid article{border-left:0;border-top:1px solid var(--line)}.manifesto-grid article:first-child{border-top:0}.manifesto-grid h3{margin-top:18px}.image-ribbon{grid-template-columns:1fr}.planner-intro,.section-heading,.results-top{align-items:flex-start;flex-direction:column}.planner-intro h2{font-size:42px}.planner-badge{align-self:flex-start}.planner-main{padding:20px}.planner-side{padding:20px}.destination-input-wrap input{font-size:24px}.field-row{grid-template-columns:1fr 1fr}.results-actions{width:100%;flex-wrap:wrap}.results-actions button{flex:1}.results-top h2{font-size:37px}.data-ribbon,.api-status{grid-template-columns:1fr 1fr}.stop{grid-template-columns:58px 1fr}.source-mini{display:none}.replan-banner,.footer{flex-direction:column}.footer-meta{justify-content:flex-start}.local-cards{grid-template-columns:1fr}}
 @media(max-width:470px){.top-actions .ghost-btn{display:none}.hero h1{font-size:45px}.hero-metrics{gap:9px}.hero-metrics span{font-size:10px}.hero-collage{min-height:430px}.photo-card-a{width:72%;height:355px}.photo-card-b{width:30%;height:160px}.photo-card-c{width:38%;height:165px}.live-badge{width:210px;padding:13px}.field-row{grid-template-columns:1fr}.data-ribbon,.api-status{grid-template-columns:1fr}}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand img {
+  width: 145px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
