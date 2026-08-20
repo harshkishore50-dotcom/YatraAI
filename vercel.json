@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/yatraai.js": {
+      "maxDuration": 30
+    }
+  }
+}
