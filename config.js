@@ -3,7 +3,6 @@ window.YATRA_CONFIG = {
   // and paste that public HTTPS URL here. Never put a Gemini/OpenAI key here.
   AI_ENDPOINT: 'https://YOUR-VERCEL-APP.vercel.app/api/yatraai',
   OVERPASS_ENDPOINTS: [
-    'https://overpass-api.de/api/interpreter',
-    'https://overpass.kumi.systems/api/interpreter'
+    https://yatra-ai-one.vercel.app/
   ]
 };
