@@ -84,7 +84,7 @@
 /* Desktop */
 @media (min-width: 1000px) {
     .hero {
-        min-height: 720px;
+        min-height: 680px;
     }
 }
 
